@@ -12,6 +12,8 @@ const port = process.env.PORT || 3000;
 
 
 app.use(express.json());
+// app.use(express.static(publicPath);
+
 
 const rooms = new Map();
 
@@ -28,6 +30,7 @@ app.get('/rooms/:id', (req, res) => {
 		}
 		: { users: [], messages: [] };
 	res.json(obj);
+
 });
 
 app.post('/rooms', (req, res) => {
