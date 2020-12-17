@@ -11,8 +11,8 @@ const port = process.env.PORT || 3000;
 
 
 
-app.use(express.json());
-// app.use(express.static(publicPath))
+// app.use(express.json());
+app.use(express.static(publicPath))
 
 const rooms = new Map();
 
@@ -20,9 +20,9 @@ const rooms = new Map();
 
 
 
-// app.get('*', (req, res) => {
-// 	res.sendFile(path.join(publicPath, 'index.html'))
-// })
+app.get('*', (req, res) => {
+	res.sendFile(path.join(publicPath, 'index.html'))
+})
 
 app.get('/rooms/:id', (req, res) => {
 	const { id: roomId } = req.params;
