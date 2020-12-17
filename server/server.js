@@ -79,7 +79,7 @@ io.on('connection', (socket) => {
 	console.log('user connected', socket.id);
 });
 
-server.listen(port, (err) => {
+app.listen(port, (err) => {
 	if (err) {
 		throw Error(err);
 	}
